@@ -33,7 +33,7 @@ export default function AppBarComponent() {
         <h1 className="text-2xl font-bold">FlowDocs</h1>
       </Link>
       <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input placeholder="Search" />
+        <Input placeholder="Search in all documents" />
         <Button type="submit" size="icon" variant="ghost">
           <Search className="w-4 h-4" />
         </Button>

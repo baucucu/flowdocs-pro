@@ -24,7 +24,7 @@ export default function MetadataDisplayComponent({ documentId }) {
 
   return (
     <Tabs defaultValue="metadata">
-      <TabsList className="grid w-full grid-cols-5">
+      <TabsList className="sticky top-0 z-10 grid w-full grid-cols-5">
         <TabsTrigger value="metadata">
           <Info className="w-4 h-4 md:mr-2" />
           Metadata
