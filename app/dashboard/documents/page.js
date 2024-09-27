@@ -15,6 +15,7 @@ import { File, Activity, Tag } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Filter } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // Hard-coded documents data
 const documents = [
@@ -57,14 +58,9 @@ const documents = [
 ];
 
 export default function DocumentsPage() {
-  const [selectedDocument, setSelectedDocument] = useState(null);
-
+  const router = useRouter();
   return (
     <div className="p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Documents</h1>
-        <Button>Upload Document</Button>
-      </div>
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center space-x-2">
           <div className="relative">
@@ -97,8 +93,8 @@ export default function DocumentsPage() {
           {documents.map((doc) => (
             <TableRow
               key={doc.id}
-              onClick={() => setSelectedDocument(doc)}
               className="cursor-pointer hover:bg-muted/50"
+              onClick={() => router.push(`/dashboard/documents/${doc.id}`)}
             >
               <TableCell className="font-medium">
                 <div className="flex items-center">

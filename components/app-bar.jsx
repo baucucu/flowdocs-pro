@@ -10,14 +10,47 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LogOut, Settings, User } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import {
+  LogOut,
+  Settings,
+  User,
+  FileStack,
+  FileUp,
+  BellDot,
+  Search,
+  SlidersVertical,
+} from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
+import Link from "next/link";
 
 export default function AppBarComponent() {
   return (
     <header className="flex h-16 items-center justify-between border-b px-4 lg:px-6">
-      <h1 className="text-2xl font-bold">FlowDocs</h1>
+      <Link className="flex items-center space-x-4" href="/dashboard">
+        <FileStack className="h-6 w-6" />
+        <h1 className="text-2xl font-bold">FlowDocs</h1>
+      </Link>
+      <div className="flex w-full max-w-sm items-center space-x-2">
+        <Input placeholder="Search" />
+        <Button type="submit" size="icon" variant="ghost">
+          <Search className="w-4 h-4" />
+        </Button>
+        <Button size="icon" variant="ghost">
+          <SlidersVertical className="w-4 h-4" />
+        </Button>
+      </div>
       <div className="flex items-center space-x-4">
+        <Button className="space-x-2" variant="ghost">
+          <BellDot className="h-4 w-4" />
+          <span className="hidden md:inline">Notifications</span>
+          <Badge variant="destructive">15</Badge>
+        </Button>
+        <Button>
+          <FileUp className="h-4 w-4 md:mr-2" />
+          <span className="hidden md:inline">Upload Documents</span>
+        </Button>
         <ModeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

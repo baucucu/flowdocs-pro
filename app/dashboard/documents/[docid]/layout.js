@@ -1,3 +1,3 @@
 export default function DocumentLayout({ children }) {
-  return <div className="container mx-auto p-4 space-y-6">{children}</div>;
+  return <div className="container mx-auto pt-1 pr-2 ">{children}</div>;
 }
